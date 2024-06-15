@@ -1,3 +1,4 @@
+import dotenv from "dotenv";
 import "dotenv/config";
 import express from "express";
 import logger from "morgan";
@@ -10,9 +11,8 @@ import uploadRouter from "./routes/api/avatars.js";
 
 const app = express();
 const formatsLogger = app.get("env") === "development" ? "dev" : "short";
-
+dotenv.config();
 connectToDb();
-
 app.use(logger(formatsLogger));
 app.use(cors());
 app.use(express.json());

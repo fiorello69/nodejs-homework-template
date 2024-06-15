@@ -1,4 +1,4 @@
-import request from "supertest";
+import { request } from "supertest";
 import express from "express";
 import authRouter from "../../routes/api/users.js";
 import { jest, describe, expect, it, afterEach } from "@jest/globals";

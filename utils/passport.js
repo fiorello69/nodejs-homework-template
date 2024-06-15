@@ -4,14 +4,13 @@ import User from "../models/users.js";
 import "dotenv/config";
 
 const secretForToken = process.env.TOKEN_SECRET;
-
-const opts = {
-  jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
-  secretOrKey: secretForToken,
-};
+const options = {};
+options.jwtFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken();
+options.secretOrKey = secretForToken;
 
 passport.use(
-  new JwtStrategy(opts, async (jwt_payload, done) => {
+  // eslint-disable-next-line camelcase
+  new JwtStrategy(options, async (jwt_payload, done) => {
     try {
       const user = await User.findById(jwt_payload.userId);
 
