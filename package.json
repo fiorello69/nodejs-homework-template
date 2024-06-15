@@ -6,13 +6,29 @@
     "start": "cross-env NODE_ENV=production node ./server.js",
     "start:dev": "cross-env NODE_ENV=development nodemon ./server.js",
     "lint": "eslint **/*.js",
-    "lint:fix": "eslint --fix **/*.js"
+    "lint:fix": "eslint --fix **/*.js",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "test:dev": "node --experimental-vm-modules node_modules/jest/bin/jest.js --watch"
   },
+  "type": "module",
   "dependencies": {
+    "bcrypt": "^5.1.1",
     "cors": "2.8.5",
     "cross-env": "7.0.3",
-    "express": "4.17.1",
-    "morgan": "1.10.0"
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "gravatar": "^1.8.2",
+    "jimp": "^0.22.12",
+    "joi": "^17.13.1",
+    "jsonwebtoken": "^9.0.2",
+    "mockingoose": "^2.16.2",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "nodemailer": "^6.9.13",
+    "passport": "^0.7.0",
+    "passport-jwt": "^4.0.1",
+    "supertest": "^7.0.0",
+    "uuid": "^10.0.0"
   },
   "devDependencies": {
     "eslint": "7.19.0",
@@ -21,6 +37,12 @@
     "eslint-plugin-import": "2.25.3",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "5.2.0",
-    "nodemon": "2.0.15"
-  }
+    "jest": "^29.7.0",
+    "nodemon": "^3.1.3"
+  },
+  "description": "Виконайте форк цього репозиторію для виконання домашніх завдань (2-6) Форк створить репозиторій на вашому http://github.com",
+  "main": ".eslintrc.js",
+  "keywords": [],
+  "author": "VIOREL_BREBAN <vbreban69@gmail.com>",
+  "license": "ISC"
 }
